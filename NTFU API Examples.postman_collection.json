@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "9b2e69a6-fe6b-4090-ba54-8a78d7b0c5e6",
+		"name": "NTFU API Examples",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13697394"
+	},
+	"item": [
+		{
+			"name": "Controle op NTFU lidmaatschap",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "{YOUR-USERNAME}"
+					},
+					{
+						"key": "password",
+						"value": "{YOUR-PASSWORD}"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "https://api.ntfu.nl/api/lidcontrole/{MEMBERNR}/{POSTALCODE}/{BIRTHDATE}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"ntfu",
+						"nl"
+					],
+					"path": [
+						"api",
+						"lidcontrole",
+						"209100",
+						"8931BL",
+						"21-12-1979"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lijst met alle eigen club leden",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "{YOUR-USERNAME}"
+					},
+					{
+						"key": "password",
+						"value": "{YOUR-PASSWORD}"
+					}
+				],
+				"url": {
+					"raw": "https://api.ntfu.nl/api/ledenlijst",
+					"protocol": "https",
+					"host": [
+						"api",
+						"ntfu",
+						"nl"
+					],
+					"path": [
+						"api",
+						"ledenlijst"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lijst met aankomende toertochten",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "{YOUR-USERNAME}"
+					},
+					{
+						"key": "password",
+						"value": "{YOUR-PASSWORD}"
+					}
+				],
+				"url": {
+					"raw": "https://api.ntfu.nl/api/toertochten/0/0/12",
+					"protocol": "https",
+					"host": [
+						"api",
+						"ntfu",
+						"nl"
+					],
+					"path": [
+						"api",
+						"toertochten",
+						"0",
+						"0",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NTFU RSS nieuws feed",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://api.ntfu.nl/api/ntfunieuws",
+					"protocol": "https",
+					"host": [
+						"api",
+						"ntfu",
+						"nl"
+					],
+					"path": [
+						"api",
+						"ntfunieuws"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

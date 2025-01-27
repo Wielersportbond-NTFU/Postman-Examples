@@ -77,6 +77,46 @@
 			"response": []
 		},
 		{
+			"name": "Een nieuw lid aanmelden",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "{YOUR-USERNAME}"
+					},
+					{
+						"key": "password",
+						"value": "{YOUR-PASSWORD}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"initials\": \"I\",\r\n    \"firstname\": \"Firstname\",\r\n    \"middlename\": null,\r\n    \"lastname\": \"Lastname\",\r\n    \"birthdate\": \"1980-11-25T00:00:00\",    \r\n    \"gender\": 867420001,\r\n    \"emailaddress\": \"email@hotmail.com\",\r\n    \"telephone\": \"0318-581300\",\r\n    \"address_postalcode\": \"3905 PH\",\r\n    \"address_street\": \"Landjuweel\",\r\n    \"address_housenumber\": \"62\",\r\n    \"address_housenumberaddition\": null,\r\n    \"address_city\": \"Veenendaal\",\r\n    \"freefield1\": \"Freefield 1\",\r\n    \"freefield3\": \"Freefield 3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.ntfu.nl/api/ledenlijst/nieuwlid",
+					"protocol": "https",
+					"host": [
+						"api",
+						"ntfu",
+						"nl"
+					],
+					"path": [
+						"api",
+						"ledenlijst",
+						"nieuwlid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Lijst met aankomende toertochten",
 			"request": {
 				"method": "GET",
@@ -91,7 +131,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://api.ntfu.nl/api/toertochten/0/0/12",
+					"raw": "https://api.ntfu.nl/api/toertochten/{TYPE}/{PROVINCE}/{MONTHS}",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -104,6 +144,36 @@
 						"0",
 						"0",
 						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lijst met alle NTFU verenigingen",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "{YOUR-USERNAME}"
+					},
+					{
+						"key": "password",
+						"value": "{YOUR-PASSWORD}"
+					}
+				],
+				"url": {
+					"raw": "https://api.ntfu.nl/api/clubs",
+					"protocol": "https",
+					"host": [
+						"api",
+						"ntfu",
+						"nl"
+					],
+					"path": [
+						"api",
+						"clubs"
 					]
 				}
 			},
@@ -132,6 +202,35 @@
 					"path": [
 						"api",
 						"ntfunieuws"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fietssport RSS nieuws feed",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://api.ntfu.nl/api/fietssportnieuws/{TYPE}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"ntfu",
+						"nl"
+					],
+					"path": [
+						"api",
+						"fietssportnieuws",
+						"0"
 					]
 				}
 			},
